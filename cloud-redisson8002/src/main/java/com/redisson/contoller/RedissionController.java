@@ -30,9 +30,8 @@ public class RedissionController {
 
     @GetMapping("/test")
     public  String test(){
-        String lockey="45233222322";
+        String lockey="5554564566";
         RLock lock = redissonClient.getLock(lockey);
-
         try {
             boolean b = lock.tryLock(2, 3, TimeUnit.SECONDS);
             if (b) {
