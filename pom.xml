@@ -13,6 +13,7 @@
         <module>cloud-consumer-order82</module>
         <module>cloud-redisson8002</module>
         <module>cloud-rocketmq8003</module>
+        <module>cloud-sentinel</module>
     </modules>
     <packaging>pom</packaging>
 
