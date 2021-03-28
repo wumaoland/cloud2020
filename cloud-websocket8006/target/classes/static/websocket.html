@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <title>Title</title>
+</head>
+
+<div style="height: 200px;border: 1px solid black;overflow:auto;" id="show"></div>
+<input id="msg" type="text"/>
+<button id="send">发送给</button>
+<select id="reciver">
+</select>
+<button id="close">断开</button>
+<input type="hidden" id="username"/>
+
+
+<script>
+    var sendMsg=document.getElementById("msg");
+    var username=document.getElementById("username");
+    var send=document.getElementById("send");
+    var reciver=document.getElementById("reciver");
+    var close=document.getElementById("close");
+    var show=document.getElementById("show");
+    var ws = new WebSocket("ws://152.32.133.201:8080/websocket");
+    ws.addEventListener("open",function () {
+        show.innerHTML="服务已经连接...";
+    });
+    send.addEventListener("click",function () {
+        var content=sendMsg.value;
+        console.log(content);
+        var index=reciver.selectedIndex ;
+        var send= new Message(false,username.value,reciver.options[index].value,content);
+        var sendContent= JSON.stringify(send);
+        var beforContent=show.innerHTML;
+        show.innerHTML=beforContent+"你对"+reciver.options[index].value+"说:"+content+"</br>";
+        ws.send(sendContent);
+    });
+    ws.addEventListener("message",function (e) {
+        var data=JSON.parse(e.data);
+        show.scrollTop=show.scrollHeight
+        if(data.msg != undefined){
+            var beforContent=show.innerHTML;
+            if(data.fromWho == undefined ){
+                username.value=data.msg
+                show.innerHTML=beforContent+"你的匿名名称:"+data.msg+"</br>";
+            }else{
+                show.innerHTML =beforContent+"用户"+data.fromWho+"说："+data.msg+"</br>"
+            }
+        }else{
+            addOption(JSON.parse(e.data).onOlineIds);
+        }
+    });
+    close.addEventListener("click",function () {
+       ws.close();
+    });
+    ws.addEventListener("close",function () {
+        show.innerHTML="websocket服务已断开";
+    });
+
+    function Message(isAll,fromWho,toWho,msg) {
+        this.fromWho=fromWho;
+        this.isAll=isAll;
+        this.toWho=toWho;
+        this.msg =msg;
+    }
+
+    function addOption(){
+        removeAll();
+        //根据id查找对象，
+        var obj=document.getElementById('reciver');
+        //添加一个选项
+        let arr=[].concat.apply([], arguments)
+        for (let i = 0; i < arr.length; i++) {
+            obj.options.add(new Option(arr[i],arr[i])); //这个兼容IE与firefox
+        }
+    }
+
+    function removeAll(){
+        var obj=document.getElementById('reciver');
+        obj.innerHTML = "";
+
+        for(var i=0;i<obj.childNodes.length;i++){
+            obj.removeChild(obj.options[0]);
+            obj.remove(0);
+            obj.options[0] = null;
+        }
+
+    }
+</script>
+</body>
+</html>

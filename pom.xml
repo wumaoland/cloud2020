@@ -10,10 +10,11 @@
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
-        <module>cloud-consumer-order82</module>
         <module>cloud-redisson8002</module>
         <module>cloud-rocketmq8003</module>
-        <module>cloud-sentinel</module>
+        <module>cloud-sentinel8004</module>
+        <module>cloud-thread8005</module>
+        <module>cloud-websocket</module>
     </modules>
     <packaging>pom</packaging>
 
