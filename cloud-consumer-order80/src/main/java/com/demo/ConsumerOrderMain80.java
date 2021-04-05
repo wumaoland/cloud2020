@@ -2,7 +2,6 @@ package com.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * @ClassName OrderMain80
@@ -13,9 +12,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  **/
 //exclude = DataSourceAutoConfiguration.class 可以不配置数据源启动项目
 @SpringBootApplication
-public class OrderMain80 {
+public class ConsumerOrderMain80 {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class, args);
+        SpringApplication.run(ConsumerOrderMain80.class, args);
     }
 }
 
