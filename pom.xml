@@ -14,7 +14,7 @@
         <module>cloud-rocketmq8003</module>
         <module>cloud-sentinel8004</module>
         <module>cloud-thread8005</module>
-        <module>cloud-websocket</module>
+        <module>cloud-websocket8006</module>
     </modules>
     <packaging>pom</packaging>
 
