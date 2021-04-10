@@ -21,7 +21,7 @@
     var reciver=document.getElementById("reciver");
     var close=document.getElementById("close");
     var show=document.getElementById("show");
-    var ws = new WebSocket("ws://localhost:8006/websocket");
+    var ws = new WebSocket("ws://152.32.133.201:8007/websocket");
     ws.addEventListener("open",function () {
         show.innerHTML="服务已经连接...";
     });
