@@ -4,6 +4,10 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>Title</title>
 </head>
+<body>
+<audio controls="controls"  id="yinpin" src="http://leewei.space/resource/qq_tishi.mp4" style="disylay:none;" hidden="hidden">
+    your browser dose not support the audio element
+</audio>
 
 <div style="height: 200px;border: 1px solid black;overflow:auto;" id="show"></div>
 <input id="msg" type="text"/>
@@ -21,7 +25,8 @@
     var reciver=document.getElementById("reciver");
     var close=document.getElementById("close");
     var show=document.getElementById("show");
-    var ws = new WebSocket("ws://152.32.133.201:8007/websocket");
+    var yinpin=document.getElementById("yinpin")
+    var ws = new WebSocket("ws://152.32.133.201:8006/websocket");
     ws.addEventListener("open",function () {
         show.innerHTML="服务已经连接...";
     });
@@ -44,6 +49,7 @@
                 username.value=data.msg
                 show.innerHTML=beforContent+"你的匿名名称:"+data.msg+"</br>";
             }else{
+                yinpin.play();
                 show.innerHTML =beforContent+"用户"+data.fromWho+"说："+data.msg+"</br>"
             }
         }else{
