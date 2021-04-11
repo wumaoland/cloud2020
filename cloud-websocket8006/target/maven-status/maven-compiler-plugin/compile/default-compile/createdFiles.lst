@@ -1,0 +1,4 @@
+com\websocket\config\WebsocketConfig.class
+com\websocket\entity\Message.class
+com\websocket\WebsocketApplication.class
+com\websocket\controller\WebsockerServerController.class
