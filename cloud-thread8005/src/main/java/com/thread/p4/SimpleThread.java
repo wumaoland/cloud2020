@@ -1,18 +1,7 @@
-package com.thread.p3;
+package com.thread.p4;
 
-import org.springframework.web.bind.annotation.GetMapping;
-
-public class Test3 {
+public class SimpleThread {
     public static void main(String[] args) {
-       /* MyThread3 myThread3 = new MyThread3();
-        Thread thread = new Thread(myThread3);
-        thread.start();
-
-        for (int i = 0; i < 1000; i++) {
-            System.out.println("main3线程执行：" + i);
-        }*/
-
-
        //简洁创建线程
         Thread thread4 = new Thread(new Runnable() {
             @Override
@@ -30,7 +19,5 @@ public class Test3 {
                 System.out.println("线程：" + Thread.currentThread().getName());
             }).start();
         }
-
-
     }
 }
