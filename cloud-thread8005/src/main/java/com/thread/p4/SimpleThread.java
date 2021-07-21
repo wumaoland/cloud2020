@@ -19,5 +19,7 @@ public class SimpleThread {
                 System.out.println("线程：" + Thread.currentThread().getName());
             }).start();
         }
+
+
     }
 }
