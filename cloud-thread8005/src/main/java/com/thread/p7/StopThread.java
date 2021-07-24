@@ -4,7 +4,7 @@ package com.thread.p7;
  * 总结：
  * 标志位停止线程就是让run()方法里的代码不再执行
  */
-public class StatusThread implements Runnable {
+public class StopThread implements Runnable {
     private boolean flag = true;
 
     @Override
@@ -20,12 +20,12 @@ public class StatusThread implements Runnable {
     }
 
     public static void main(String[] args) {
-        StatusThread statusThread = new StatusThread();
-        new Thread(statusThread).start();
+        StopThread stopThread = new StopThread();
+        new Thread(stopThread).start();
         for (int i = 0; i < 1000; i++) {
             System.out.println(i);
             if (i == 666) {
-                statusThread.stop();
+                stopThread.stop();
             }
         }
     }
