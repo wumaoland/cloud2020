@@ -2,6 +2,7 @@ package com.rocketmq.controller;
 
 import com.rocketmq.basic.SpringProducer;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -20,8 +21,13 @@ public class MqTestController {
     @Resource
     private SpringProducer producer;
 
-    @GetMapping("/sendMsg")
-    public void testRocketMq(String msg){
+    @GetMapping("/sendMsg/{msg}")
+    public void testRocketMq(@PathVariable("msg") String msg){
         this.producer.sendMessage(topic,msg);
+    }
+
+    @GetMapping("/sendDelayMsg/{msg}")
+    public void sendDelayMessage(@PathVariable("msg") String msg){
+        this.producer.sendDelayMessage(topic,msg,3);
     }
 }

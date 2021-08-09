@@ -6,7 +6,7 @@ spring:
     name: cloud2020
   redis:
     database: 0 #Redis数据库索引（默认为0）
-    host: 127.0.0.1 # Redis服务器地址
+    host: 152.32.133.201 # Redis服务器地址
     port: 6379 # Redis服务器连接端口
     #password: 12456 # Redis服务器连接密码（默认为空）
     lettuce:
@@ -16,8 +16,9 @@ spring:
         max-idle: 8 # 连接池中的最大空闲连接 默认 8
         min-idle: 0 # 连接池中的最小空闲连接 默认 0
 
-#rocketmq:
-#  name-server: 152.32.133.201:9876
-#  producer:
-#    group: springBootGroup
+#从这里看出如果是整合了RocketMQTemplate是不需要在代码里面注入这些配置的
+rocketmq:
+  name-server: 152.32.133.201:9876
+  producer:
+    group: springBootGroup
 
