@@ -11,7 +11,6 @@ public class LockTest {
         new Thread(lockThread).start();
         new Thread(lockThread).start();
         new Thread(lockThread).start();
-
    /*     List<Integer> strings = Arrays.asList(1, 2, 3);
         strings.stream().filter(i -> i >= 2).peek(System.out::println).count();*/
     }
