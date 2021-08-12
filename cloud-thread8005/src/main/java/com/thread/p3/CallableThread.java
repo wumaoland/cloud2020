@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.*;
 
+/**
+ * 实现Callable创建线程
+ */
 public class CallableThread implements Callable<Boolean> {
     private String url;
     private String fileName;
