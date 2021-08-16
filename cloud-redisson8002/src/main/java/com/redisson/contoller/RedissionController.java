@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
@@ -123,6 +127,21 @@ public class RedissionController {
             }
 
 
+        }
+
+    }
+
+    @GetMapping("/test2")
+    public void test2() {
+        Map<String ,String> map = new HashMap();
+        map.put("age","23");
+        map.put("name", "小李");
+        //this.stringRedisTemplate.opsForHash().putAll("a",map);
+        this.mapRemove("a","age","name");
+    }
+    public void mapRemove(String mapName,String ...keys){
+        for (String key : keys) {
+            this.stringRedisTemplate.opsForHash().delete(mapName,key);
         }
 
     }
