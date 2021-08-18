@@ -1,5 +1,10 @@
 package com.thread.pc_tradition_fake_noity;
 
+/**
+ * synchronized 生产者消费者问题
+ * 解决虚假唤醒，不能if去判断是否等待，需要循环判断，如while(xx!=sss)
+ * 使用： Objec.wait() 等待 ，Object.notifyAll()唤醒
+ */
 public class A {
     public static void main(String[] args) {
         B b = new B();

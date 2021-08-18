@@ -4,6 +4,11 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Lock的生产者消费者的问题
+ * 解决虚假唤醒，不能if去判断是否等待，需要循环判断，如while(xx!=sss)
+ * 使用：   创建监视器 Condition condition = lock.newCondition(), condition.await() 等待，condition.signalAll()唤醒
+ */
 public class C {
     public static void main(String[] args) {
         D d = new D();
