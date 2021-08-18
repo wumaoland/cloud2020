@@ -24,9 +24,8 @@ class LockThread implements Runnable {
     @Override
     public void run() {
         try {
+            lock.lock();
             while (true) {
-
-                lock.lock();
                 if (tickets > 0) {
                     System.out.println(tickets--);
                 } else {
