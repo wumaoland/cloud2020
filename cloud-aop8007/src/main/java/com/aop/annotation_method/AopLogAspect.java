@@ -23,30 +23,63 @@ public class AopLogAspect {
     public void afterAopLog() {
     }
 
+    @Pointcut(value = "@annotation(com.aop.annotation_method.AfterReturningAopLog)")
+    public void afterReturningAopLog() {
+    }
+
+    @Pointcut(value = "@annotation(com.aop.annotation_method.AfterThrowingAopLog)")
+    public void afterThrowingAopLog() {
+
+    }
+
     /**
      * 环绕通知
+     *
      * @param point
      */
     @Around(value = "aroundAopLog()")
     public void aroundMethod(ProceedingJoinPoint point) {
         Object proceed = null;
-        log.info("【环绕通知-前置执行】,请求：方法={} 参数={},",point.getSignature().getName(),point.getArgs());
+        log.info("【环绕通知-前置执行】,请求：方法={} 参数={},", point.getSignature().getName(), point.getArgs());
         try {
-             proceed = point.proceed();
+            proceed = point.proceed();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
-        log.info("【环绕通知-后置执行】,响应：参数={}",proceed.toString());
+        log.info("【环绕通知-后置执行】,响应：参数={}", proceed.toString());
+        int a = 1;
     }
 
-
+    /**
+     * 前置通知
+     */
     @Before(value = "beforeAopLog()")
-    public void beforeMethod(){
+    public void beforeMethod() {
         log.info("【前置通知-前置执行】");
     }
 
+    /**
+     * 后置通知(目标方法是否异常都执行)
+     */
     @After(value = "afterAopLog()")
-    public void afterMethod(){
+    public void afterMethod() {
         log.info("【后置通知-后置执行】");
     }
+
+    /**
+     * 后置正常通知(目标方法正常返回才会执行)
+     */
+    @AfterReturning(value = "afterReturningAopLog()")
+    public  void afterReturningMethod(){
+        log.info("【后置正常通知-后置正常执行】");
+    }
+
+    /**
+     * 后置异常通知(目标方法执行异常才会执行)
+     */
+    @AfterThrowing(value = "afterThrowingAopLog()")
+    public void afterThrowingMethod() {
+        log.info("【后置异常通知】-后置异常执行");
+    }
+
 }
