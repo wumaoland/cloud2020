@@ -13,11 +13,11 @@ public class ScheduledMessageProducer {
         // Launch producer
         producer.setNamesrvAddr("152.32.133.201:9876");
         producer.start();
-        int totalMessagesToSend = 100;
+        int totalMessagesToSend = 10;
         for (int i = 0; i < totalMessagesToSend; i++) {
-            Message message = new Message("TestOriginTopic", ("Hello scheduled message " + i).getBytes());
+            Message message = new Message("TestOriginTopic", ("原生方式发送消息 " + i).getBytes());
             // This message will be delivered to consumer 10 seconds later.
-            message.setDelayTimeLevel(3);
+            message.setDelayTimeLevel(1);
             // Send the message
             producer.send(message);
         }
