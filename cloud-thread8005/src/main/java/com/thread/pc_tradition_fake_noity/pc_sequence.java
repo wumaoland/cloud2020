@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 使用监视器实现：
+ * 使用监视器实现的例子：
  * 1.A执行完 唤醒B
  * 2.B执行完 唤醒C
  * 3.C执行完 唤醒A
