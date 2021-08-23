@@ -26,7 +26,7 @@ public class HelloController {
   @GetMapping("/hello")
     public String hello(){
         try {
-            SphU.entry("hello");
+            SphU.entry("flag");
             return "hello sentinel";
         } catch (BlockException e) {
            return "服务繁忙请稍后";
@@ -44,7 +44,7 @@ public class HelloController {
 
         //创建规则并自定义配置
         FlowRule flowRule = new FlowRule();
-        flowRule.setResource("hello");
+        flowRule.setResource("flag");
         flowRule.setGrade(RuleConstant.FLOW_GRADE_QPS);
         flowRule.setCount(10);
 

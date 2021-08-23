@@ -7,16 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-thread8005" />
         <module name="cloud-websocket8006" />
-        <module name="cloud-rocketmq8003" />
+        <module name="cloud-consumer-order80" />
         <module name="cloud-sentinel8004" />
         <module name="cloud-provider-payment8001" />
+        <module name="cloud-thread8005" />
+        <module name="cloud-rocketmq8003" />
         <module name="cloud-redisson8002" />
-        <module name="cloud-consumer-order80" />
+        <module name="cloud-aop8007" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cloud-aop8007" target="1.8" />
       <module name="cloud-consumer-order80" target="1.8" />
       <module name="cloud-provider-payment8001" target="1.8" />
       <module name="cloud-redisson8002" target="1.8" />
@@ -24,7 +26,13 @@
       <module name="cloud-sentinel8004" target="1.8" />
       <module name="cloud-thread8005" target="1.8" />
       <module name="cloud-websocket8006" target="1.8" />
+      <module name="demo" target="1.8" />
       <module name="springcloud" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+    </option>
   </component>
 </project>
