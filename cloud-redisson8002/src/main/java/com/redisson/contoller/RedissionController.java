@@ -1,5 +1,7 @@
 package com.redisson.contoller;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.json.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 
@@ -71,7 +70,7 @@ public class RedissionController {
      * 原理是当当前线程拿到锁还在执行业务的时候，锁在业务执行完之前提前被释放，其他线程也能在业务没执行完前拿到锁。
      */
     @GetMapping("/wait_lock")
-    public  void wait_lock() {
+    public void wait_lock() {
         String lockKey = "123";
         RLock lock = this.redissonClient.getLock(lockKey);
         try {
@@ -95,7 +94,6 @@ public class RedissionController {
 
     /**
      * 限流
-     *
      */
     @GetMapping("")
     public static void testThread() {
@@ -114,7 +112,7 @@ public class RedissionController {
     @GetMapping("/limit_stream")
     public void limitStream() {
         String phone = "17621861420";
-        while (true){
+        while (true) {
             RRateLimiter stream_lock = this.redissonClient.getRateLimiter(phone);
 
             //每10秒钟产生一个令牌
@@ -123,7 +121,7 @@ public class RedissionController {
             //拿到一个令牌
             boolean b = stream_lock.tryAcquire(1);
             if (b) {
-                System.out.println("----------------------向"+phone+"发送短信----------------");
+                System.out.println("----------------------向" + phone + "发送短信----------------");
             }
 
 
@@ -133,16 +131,40 @@ public class RedissionController {
 
     @GetMapping("/test2")
     public void test2() {
-        Map<String ,String> map = new HashMap();
-        map.put("age","23");
+        Map<String, String> map = new HashMap();
+        map.put("age", "23");
         map.put("name", "小李");
         //this.stringRedisTemplate.opsForHash().putAll("a",map);
-        this.mapRemove("a","age","name");
+        this.mapRemove("a", "age", "name");
+        this.stringRedisTemplate.opsForSet().add("B","1");
+        this.stringRedisTemplate.opsForValue().set("C","2");
+        Boolean b = this.stringRedisTemplate.expire("B", 10, TimeUnit.SECONDS);
+        System.out.println(60*10L);
     }
-    public void mapRemove(String mapName,String ...keys){
+
+    public void mapRemove(String mapName, String... keys) {
         for (String key : keys) {
-            this.stringRedisTemplate.opsForHash().delete(mapName,key);
+            this.stringRedisTemplate.opsForHash().delete(mapName, key);
         }
+
+    }
+
+    public static void main(String[] args) {
+        String format = DateUtil.format(new Date(), "yyyy-MM-dd");
+        String concat = format.concat(" 1:15");
+        System.out.println(concat);
+        Long startDateTime = DateUtil.parse(format.concat(" 01:15")).getTime();
+        System.out.println(startDateTime);
+        Long endStartTime = DateUtil.parse(format.concat(" 02:30")).getTime();
+
+        JSONObject jsonObject = new JSONObject();
+        JSONObject jsonObject2 = new JSONObject();
+        jsonObject2.set("050403",new JSONObject());
+        jsonObject.set("data",jsonObject2);
+        jsonObject.set("msg","xxxxx");
+
+        System.out.println(jsonObject.toString());
+        System.out.println(jsonObject.getJSONObject("data").size() == 0);
 
     }
 
