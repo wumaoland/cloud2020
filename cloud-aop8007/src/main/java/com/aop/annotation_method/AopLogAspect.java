@@ -53,9 +53,9 @@ public class AopLogAspect {
     /**
      * 前置通知
      */
-    @Before(value = "beforeAopLog()")
-    public void beforeMethod() {
-        log.info("【前置通知-前置执行】");
+    @Before("beforeAopLog() && @annotation(befireAopLog)")
+    public void beforeMethod(BeforeAopLog befireAopLog) {
+        log.info("【前置通知-前置执行】".concat(befireAopLog.name()));
     }
 
     /**
