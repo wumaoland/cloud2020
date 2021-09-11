@@ -29,7 +29,7 @@ public class SevenArgsDemo {
         );
         //new ThreadPoolExecutor.CallerRunsPolicy() //线程拒绝策略：哪来的回哪去，例如下面第九个线程就交个main线程去处理了
         //new ThreadPoolExecutor.DiscardPolicy() //线程拒绝策略：哪来的回哪去，例如下面第九个线程就交个main线程去处理了
-        new ThreadPoolExecutor.DiscardOldestPolicy();//队列满了，尝试和最早的竞争，也不会抛出异常！
+        //new ThreadPoolExecutor.DiscardOldestPolicy();//队列满了，尝试和最早的竞争，也不会抛出异常！
         try {
             for (int i = 1; i <= 9; i++) {
                 threadPool.execute(() -> {
