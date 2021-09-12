@@ -1,6 +1,6 @@
 package com.thread.pc_mode_thread;
 
-import com.thread.threadpool.ThreadPoolThread;
+import com.thread.threadpool1.ThreadPoolThread;
 
 /**
  * TODO 这节有问题，后续需研究
