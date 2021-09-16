@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ *
+ * stream 流  和四大函数式接口有关，需看传参
+ *
  * 有五个用户，一行代码筛选出如下条件的用户：
  * 1.年龄是偶数
  * 2.年龄必须大于21岁
