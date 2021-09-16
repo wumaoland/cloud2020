@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class BlockQueueTest {
     public static void main(String[] args) throws InterruptedException {
-        test4();
+        test2();
     }
 
     /**
@@ -39,6 +39,8 @@ public class BlockQueueTest {
         System.out.println(queue.offer("a"));
         System.out.println(queue.offer("b"));
         System.out.println(queue.offer("c"));
+        System.out.println(queue.offer("d"));
+
         //System.out.println(queue.offer("d"));//放入超出范围的值
         System.out.println("-----取出------");
         System.out.println(queue.poll());
