@@ -34,7 +34,7 @@ public class CompletableFutureDemo {
         CompletableFuture<Void> completableFuture2 = CompletableFuture.runAsync(() -> {
             System.out.println(ArticleInfo.get().toString());
         });
-        completableFuture2.get();
+        completableFuture2.get();//get会阻塞直到completableFuture2任务完成
         System.out.println("总共耗时："+(System.currentTimeMillis()-startTime));
     }
 }
