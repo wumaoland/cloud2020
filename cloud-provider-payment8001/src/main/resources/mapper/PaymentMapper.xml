@@ -15,7 +15,17 @@
         <id column="serial" property="serial" jdbcType="VARCHAR"></id>
     </resultMap>
     <select id="getPaymentById" parameterType="Long" resultMap="BaseResultMap">
-        select * from payment where id=#{id}
+        select *
+        from payment
+        where id = #{id}
     </select>
+
+    <!--修改-->
+    <update id="updatePayment" parameterType="com.demo.entity.Payment">
+    <![CDATA[
+        update payment set status=2 ,version=version+1 where id=#{id} and version=#{version}
+        ]]>
+
+    </update>
 </mapper>
     

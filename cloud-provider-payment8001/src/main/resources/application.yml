@@ -7,7 +7,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  #当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://152.32.133.201:3306/db2020?useUnicode=true&characterEncoding=utf8&userSSL=false
+    url: jdbc:mysql://152.32.133.201:3306/db2020?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: 123456
 

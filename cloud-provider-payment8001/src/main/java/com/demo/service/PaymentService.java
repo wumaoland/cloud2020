@@ -8,4 +8,6 @@ public interface PaymentService {
 
      Payment getPaymentById(@Param("id") Long id);
 
+     void updatePayment(Payment payment);
+
 }

@@ -11,4 +11,6 @@ public interface PaymentDao {
 
     Payment getPaymentById(@Param("id") Long id);
 
+    int updatePayment(Payment payment);
+
 }
