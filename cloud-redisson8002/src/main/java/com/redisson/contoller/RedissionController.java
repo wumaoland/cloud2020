@@ -5,11 +5,14 @@ import cn.hutool.json.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -29,6 +32,9 @@ public class RedissionController {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     /**
      * 分布式锁的使用例子
@@ -129,18 +135,29 @@ public class RedissionController {
 
     }
 
-    @GetMapping("/test2")
-    public void test2() {
+    @GetMapping("/set/{hostNumber}")
+    public void test2(@PathVariable("hostNumber") String hostNumber) {
         Map<String, String> map = new HashMap();
         map.put("age", "23");
         map.put("name", "小李");
-        //this.stringRedisTemplate.opsForHash().putAll("a",map);
+        map.put("hostNumber", hostNumber);
+      /*  //this.stringRedisTemplate.opsForHash().putAll("a",map);
         this.mapRemove("a", "age", "name");
         this.stringRedisTemplate.opsForSet().add("B","1");
         this.stringRedisTemplate.opsForValue().set("C","2");
         Boolean b = this.stringRedisTemplate.expire("B", 10, TimeUnit.SECONDS);
-        System.out.println(60*10L);
+        System.out.println(60*10L);*/
+        this.stringRedisTemplate.opsForValue().set("devIds", hostNumber);
     }
+
+    @GetMapping("/get")
+    public void get() {
+        Set<String> keys = this.stringRedisTemplate.opsForSet().members("devIds");
+        HashMap<String, Object> stringObjectHashMap = new HashMap<>();
+        stringObjectHashMap.put("devIds",keys);
+    }
+
+
 
     public void mapRemove(String mapName, String... keys) {
         for (String key : keys) {
@@ -150,7 +167,7 @@ public class RedissionController {
     }
 
     public static void main(String[] args) {
-        String format = DateUtil.format(new Date(), "yyyy-MM-dd");
+       /* String format = DateUtil.format(new Date(), "yyyy-MM-dd");
         String concat = format.concat(" 1:15");
         System.out.println(concat);
         Long startDateTime = DateUtil.parse(format.concat(" 01:15")).getTime();
@@ -164,7 +181,17 @@ public class RedissionController {
         jsonObject.set("msg","xxxxx");
 
         System.out.println(jsonObject.toString());
-        System.out.println(jsonObject.getJSONObject("data").size() == 0);
+        System.out.println(jsonObject.getJSONObject("data").size() == 0);*/
+
+       /* ArrayList<Object> objects = new ArrayList<>();
+        objects = null;
+        objects.forEach((k)->{
+            System.out.println(k);
+        });*/
+        List<BigDecimal> bigDecimals = Arrays.asList(new BigDecimal(-1152.0), new BigDecimal(576.0));
+
+        BigDecimal reduce = bigDecimals.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
+        System.out.println(reduce);
 
     }
 
