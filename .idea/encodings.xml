@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/cloud-aop8007/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-consumer-order80/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-consumer-order80/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mqtt-8008/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mqtt-8008/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-provider-payment8001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-provider-payment8001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-redisson8002/src/main/java" charset="UTF-8" />

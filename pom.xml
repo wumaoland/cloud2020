@@ -16,6 +16,7 @@
         <module>cloud-thread8005</module>
         <module>cloud-websocket8006</module>
         <module>cloud-aop8007</module>
+        <module>cloud-mqtt-8008</module>
     </modules>
     <packaging>pom</packaging>
 
