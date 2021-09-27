@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  **/
 @RestController
 public class MqTestController {
-    private final String topic="TestTopic";
+    private final String topic="LW_NEW_SYSTEM_TEST";
 
     @Resource
     private SpringProducer producer;
