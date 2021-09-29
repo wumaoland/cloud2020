@@ -32,7 +32,7 @@ public class MqttClientConfig {
             // MQTT的连接设置
             MqttConnectOptions options = new MqttConnectOptions();
             // 设置是否清空session,这里如果设置为false表示服务器会保留客户端的连接记录，这里设置为true表示每次连接到服务器都以新的身份连接
-            options.setCleanSession(true);
+            options.setCleanSession(false);
             // 设置连接的用户名
             options.setUserName(username);
             // 设置连接的密码
@@ -138,6 +138,7 @@ public class MqttClientConfig {
     public void pushMessage(String topic,String message) throws MqttException {
         MqttMessage mqttMessage = new MqttMessage();
         mqttMessage.setPayload(message.getBytes());
+        mqttClient.subscribe(topic);
         mqttClient.publish(topic,mqttMessage);
     }
 }

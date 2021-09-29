@@ -12,9 +12,9 @@ public class MqttController {
     @Autowired
     private MqttClientConfig mqttClientConfig;
 
-    @GetMapping("/send/{msg}")
-    public String sendMsg(@PathVariable("msg") String msg) throws MqttException {
-        mqttClientConfig.pushMessage("topic1", msg);
+    @GetMapping("/send/{topic}/{msg}")
+    public String sendMsg(@PathVariable("topic") String topic,@PathVariable("msg") String msg) throws MqttException {
+        mqttClientConfig.pushMessage(topic, msg);
         return "消息发送成功";
     }
 }
