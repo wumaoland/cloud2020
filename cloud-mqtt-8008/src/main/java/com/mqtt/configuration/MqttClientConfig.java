@@ -1,6 +1,7 @@
 package com.mqtt.configuration;
 
 import com.fasterxml.uuid.Generators;
+import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@Slf4j
 public class MqttClientConfig {
 
     @Value("${config.mqtt.host}")
@@ -30,7 +32,7 @@ public class MqttClientConfig {
             // MQTT的连接设置
             MqttConnectOptions options = new MqttConnectOptions();
             // 设置是否清空session,这里如果设置为false表示服务器会保留客户端的连接记录，这里设置为true表示每次连接到服务器都以新的身份连接
-            options.setCleanSession(true);
+            options.setCleanSession(false);
             // 设置连接的用户名
             options.setUserName(username);
             // 设置连接的密码
@@ -42,8 +44,7 @@ public class MqttClientConfig {
             //是否自动重连
             options.setAutomaticReconnect(true);
             //设置“遗嘱”消息的话题，若客户端与服务器之间的连接意外中断，服务器将发布客户端的“遗嘱”消息
-            options.setWill("willTopic","服务离线".getBytes(),2,false);
-
+            options.setWill("willTopic/G0001","服务离线".getBytes(),2,false);
 
             /*
             //同步阻塞式客户端
@@ -61,8 +62,43 @@ public class MqttClientConfig {
 
             //同步阻塞式客户端
             mqttClient = new MqttClient(host, clientid, new MemoryPersistence());
-            mqttClient.setCallback(new MqttPushClienCallback());
+            //这里可定义回执内容 代替new MqttPushClienCallback()
+            //mqttClient.setCallback(new MqttPushClienCallback());
+            mqttClient.setCallback(new MqttCallback() {
+                @Override
+                public void connectionLost(Throwable throwable) {
+                    try {
+                        log.info("MQTT连接断开，发起重连......");
+                        log.info("............正在连接............");
+                        //重新初始化客户端连接
+                        initMqttClient();
+                        //心跳主题
+                        mqttClient.subscribe("mqtt/face/heartbeat");
+                        //其他主题
+                        //mqttClient.subscribe("mqtt/face/by_ing112233/Rec");
+                        //mqttClient.subscribe("mqtt/face/by_ing112233/Snap");
+                        //mqttClient.subscribe("mqtt/face/by_ing112233/Ack");
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
+                    log.info(".......接收到mqtt信息.......");
+                    log.info("topid：{}", topic);
+                    log.info("mqttMessage：{}", mqttMessage.getPayload());
+                }
+
+                @Override
+                public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
+                    System.out.println("消息处理完毕");
+                }
+            });
+
             mqttClient.connect(options);
+
+            //初始化订阅主题，如设备在线
             if (topic.contains(";")) {
                 String[] split = topic.split(";");
                 int[] qos = new int[split.length];
@@ -73,6 +109,7 @@ public class MqttClientConfig {
             } else {
                 mqttClient.subscribe(topic, 2);
             }
+            System.out.println("初始化完成是否连接："+mqttClient.isConnected());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -92,6 +129,7 @@ public class MqttClientConfig {
      */
     public void subTopic(String topic, int qos) throws MqttException {
         mqttClient.subscribe(topic, qos);
+
     }
 
     /**
@@ -100,6 +138,7 @@ public class MqttClientConfig {
     public void pushMessage(String topic,String message) throws MqttException {
         MqttMessage mqttMessage = new MqttMessage();
         mqttMessage.setPayload(message.getBytes());
+        mqttClient.subscribe(topic);
         mqttClient.publish(topic,mqttMessage);
     }
 }

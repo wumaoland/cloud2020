@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * CompletableFuture 异步回调使用Demo
+ *  如果不指定线程池， 默认使用 ForkJoinPool.commonPool()
  */
 public class CompletableFutureDemo {
     public static void main(String[] args) {

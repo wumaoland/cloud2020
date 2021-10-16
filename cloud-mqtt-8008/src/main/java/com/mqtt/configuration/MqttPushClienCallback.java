@@ -1,5 +1,6 @@
 package com.mqtt.configuration;
 
+import com.alibaba.fastjson.JSONObject;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -9,6 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/***
+ * 因为在MqttClinetConfig中已经初始化该类，该类遗弃
+ */
 @Component
 public class MqttPushClienCallback implements MqttCallback {
 
@@ -44,9 +48,14 @@ public class MqttPushClienCallback implements MqttCallback {
         logger.info("mqttMessage：{}", mqttMessage.getPayload());
     }
 
+    /**
+     * 若消息成功发送完成回调用该方法
+     * @param iMqttDeliveryToken
+     */
     @Override
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
-
+        System.out.println("当前发送消息收到回执："+iMqttDeliveryToken.getResponse()+";"+ JSONObject.toJSONString(iMqttDeliveryToken.getTopics())+";"+iMqttDeliveryToken.getUserContext()+";"+iMqttDeliveryToken.getClient());
+        System.out.println("消息已成功发送完毕");
     }
 
 

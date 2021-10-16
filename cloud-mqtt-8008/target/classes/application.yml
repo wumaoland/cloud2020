@@ -1,11 +1,11 @@
 
 server:
-  port: 80
+  port: 8008
 config:
   mqtt:
     username: root
     password: 123456
-    host: tcp://152.32.133.201:1883
+    host: tcp://10.56.6.25:1883
     clientId: mqttclient2222
     topic: topic1;willTopic
     completionTimeout: 5000

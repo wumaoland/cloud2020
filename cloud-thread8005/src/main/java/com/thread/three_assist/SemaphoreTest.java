@@ -3,6 +3,9 @@ package com.thread.three_assist;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 信号量
+ */
 public class SemaphoreTest {
     public static void main(String[] args) {
         Semaphore semaphore = new Semaphore(3);
