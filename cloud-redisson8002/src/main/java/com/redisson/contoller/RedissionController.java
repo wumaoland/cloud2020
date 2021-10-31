@@ -188,10 +188,15 @@ public class RedissionController {
         objects.forEach((k)->{
             System.out.println(k);
         });*/
-        List<BigDecimal> bigDecimals = Arrays.asList(new BigDecimal(-1152.0), new BigDecimal(576.0));
+//        List<BigDecimal> bigDecimals = Arrays.asList(new BigDecimal(-1152.0), new BigDecimal(576.0));
+//
+//        BigDecimal reduce = bigDecimals.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
+//        System.out.println(reduce);
 
-        BigDecimal reduce = bigDecimals.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
-        System.out.println(reduce);
+
+        Map<String, BigDecimal> map = new HashMap<>();
+        map.put("A",new BigDecimal(2));
+        map.put("B",new BigDecimal(4));
 
     }
 
