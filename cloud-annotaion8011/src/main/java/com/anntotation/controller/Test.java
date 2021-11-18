@@ -28,6 +28,6 @@ public class Test {
     //这是注解的参数，不是方法，定义格式：参数类型 参数名()
     String name() default "";
 
-    //组数用{}
+    //数组用{}
     String[] school() default {"武汉大学","西北工业大学"};
 }
