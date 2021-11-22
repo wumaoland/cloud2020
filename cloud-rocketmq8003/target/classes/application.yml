@@ -1,0 +1,7 @@
+server:
+  port: 8003
+rocketmq:
+  name-server: 152.32.133.201:9876
+  #name-server: 10.56.6.25:9876
+  producer:
+    group: springBootGroup

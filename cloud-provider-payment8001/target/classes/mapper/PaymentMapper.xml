@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.PaymentDao">
+
+    <!--创建-->
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment(serial) values(#{serial})
+    </insert>
+
+    <!--通过id查找-->
+    <resultMap id="BaseResultMap" type="com.demo.entity.Payment">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <id column="serial" property="serial" jdbcType="VARCHAR"></id>
+    </resultMap>
+    <select id="getPaymentById" parameterType="Long" resultMap="BaseResultMap">
+        select *
+        from payment
+        where id = #{id}
+    </select>
+
+    <!--修改-->
+    <update id="updatePayment" parameterType="com.demo.entity.Payment">
+    <![CDATA[
+        update payment set status=2 ,version=version+1 where id=#{id} and version=#{version}
+        ]]>
+
+    </update>
+</mapper>
+    

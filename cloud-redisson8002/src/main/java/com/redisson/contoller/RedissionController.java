@@ -197,6 +197,7 @@ public class RedissionController {
         Map<String, BigDecimal> map = new HashMap<>();
         map.put("A",new BigDecimal(2));
         map.put("B",new BigDecimal(4));
+        
 
     }
 

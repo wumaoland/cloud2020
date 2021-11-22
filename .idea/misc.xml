@@ -10,8 +10,11 @@
       <set>
         <option value="$PROJECT_DIR$/cloud-eurke01-8010/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-eurke02-8011/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-oop-static/pom.xml" />
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/../../../tools/Maven/apache-maven-3.8.1/conf" />
+  </component>
 </project>

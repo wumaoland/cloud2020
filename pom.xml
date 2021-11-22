@@ -18,6 +18,8 @@
         <module>cloud-aop8007</module>
         <module>cloud-mqtt-8008</module>
         <module>cloud-performance-8009</module>
+        <module>cloud-netty8010</module>
+        <module>cloud-annotaion8011</module>
     </modules>
     <packaging>pom</packaging>
 
