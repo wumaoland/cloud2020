@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-sentinel8004/cloud-sentinel8004.iml" filepath="$PROJECT_DIR$/cloud-sentinel8004/cloud-sentinel8004.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-thread8005/cloud-thread8005.iml" filepath="$PROJECT_DIR$/cloud-thread8005/cloud-thread8005.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-websocket8006/cloud-websocket8006.iml" filepath="$PROJECT_DIR$/cloud-websocket8006/cloud-websocket8006.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop-datatype/oop-datatype.iml" filepath="$PROJECT_DIR$/oop-datatype/oop-datatype.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop-singleton/oop-singleton.iml" filepath="$PROJECT_DIR$/oop-singleton/oop-singleton.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop-static/oop-static.iml" filepath="$PROJECT_DIR$/oop-static/oop-static.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />
