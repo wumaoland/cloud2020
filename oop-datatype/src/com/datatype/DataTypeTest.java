@@ -23,11 +23,15 @@ public class DataTypeTest {
         System.out.println(intarry[0]);
         System.out.println(intarry1[0]);
         System.out.println("---------------我是分割线--------------");
-        Integer a = -129;
-        Integer b = -129;
+        Integer a = -190;
+        Integer b = -190;
         int c = a;
-        System.out.println(a == b);
+        System.out.println(a == b );
         System.out.println(b == c);
+        System.out.println(Integer.MAX_VALUE);
+
+        String s = new StringBuilder("abc").append(12L).toString();
+        System.out.println(s);
 
     }
 }
