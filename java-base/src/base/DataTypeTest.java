@@ -1,4 +1,4 @@
-package com.datatype;
+package base;
 
 
 public class DataTypeTest {

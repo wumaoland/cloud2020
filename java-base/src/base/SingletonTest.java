@@ -1,4 +1,4 @@
-package com.test;
+package base;
 
 /**
  * 单例模式

@@ -1,6 +1,6 @@
-package com.test;
+package oop;
 
-public class Main {
+public class StaticTest {
     public static void main(String[] args) {
         Person san = new Person("张三",24);
         System.out.println(Person.getCount());
