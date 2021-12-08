@@ -20,7 +20,7 @@ public class PropertiesTest {
         String path="D:/test.properties";
         Properties properties = new Properties();
         properties.load(new FileInputStream(path));
-        System.out.println(properties.getProperty("name"));
+        System.out.println(properties.getProperty("username"));
 
 //        **************写入配置文件***********
 //        1.获取properties对象
