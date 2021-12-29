@@ -40,7 +40,7 @@ public class ReflectionTest {
         //反射 调用无参构造方法获取实例,且构造方法为public修饰
         Person person1 = Person.class.newInstance();
 
-        //反射 获取参构造方法
+        //反射 获取有参构造方法
         Constructor<Person> constructor = Person.class.getConstructor(String.class,int.class);
         //调用构造方法
         Person lw = constructor.newInstance("lw", 24);
