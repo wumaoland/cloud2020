@@ -53,4 +53,12 @@ public class RedisTest {
         Map<Object, Object> abc = this.stringRedisTemplate.opsForHash().entries("abc");
         System.out.println(JSONObject.toJSONString(abc));
     }
+    @Test
+    public void testEquals(){
+//        Integer a=200;
+//        System.out.println(200 == a);
+
+        Boolean a=null;
+        System.out.println(a);
+    }
 }
