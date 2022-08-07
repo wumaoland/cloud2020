@@ -14,7 +14,7 @@ public class ClinetScoket {
         OutputStream contentStream = null;
         try {
             //获取服务端连接、端口
-            InetAddress host = InetAddress.getByName("127.0.0.1");
+            InetAddress host = InetAddress.getByName("1.116.37.240");
             int serverPort = 9999;
             //与服务端建立连接
             socket = new Socket(host, serverPort);

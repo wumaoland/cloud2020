@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServerScoket {
+public class ServerScoketTest {
     public static void main(String[] args) {
         ServerSocket serverSocket = null;
         Socket accept = null;
