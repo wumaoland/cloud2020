@@ -34,7 +34,7 @@ public class RedissionController {
     private StringRedisTemplate stringRedisTemplate;
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate redisTemplate;//这里存储编码格式在数据库中看是转码过的，存储取出正常，存储取出对象比较方便
 
     /**
      * 分布式锁的使用例子
@@ -193,11 +193,8 @@ public class RedissionController {
 //        BigDecimal reduce = bigDecimals.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
 //        System.out.println(reduce);
 
+        //Map<Object, Object> abc = stringRedisTemplate.opsForHash().entries("abc");
 
-        Map<String, BigDecimal> map = new HashMap<>();
-        map.put("A",new BigDecimal(2));
-        map.put("B",new BigDecimal(4));
-        
 
     }
 

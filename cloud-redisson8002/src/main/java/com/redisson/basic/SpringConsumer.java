@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
  * @Date 2021/3/13 0013 22:30
  * @Vsersion 1.0
  **/
-@Component
-@RocketMQMessageListener(consumerGroup = "MyConsumerGroup",topic = "TestTopic",consumeMode = ConsumeMode.CONCURRENTLY)
+//@Component
+//@RocketMQMessageListener(consumerGroup = "MyConsumerGroup",topic = "TestTopic",consumeMode = ConsumeMode.CONCURRENTLY)
 public class SpringConsumer implements RocketMQListener<String> {
 
 
