@@ -28,7 +28,7 @@ public class BlockQueueTest {
         System.out.println(queue.remove());
         System.out.println(queue.remove());
         System.out.println(queue.remove());
-        //System.out.println(queue.remove()); //取出超出范围的值
+        System.out.println(queue.remove()); //取出超出范围的值
     }
 
     /**
@@ -40,8 +40,8 @@ public class BlockQueueTest {
         System.out.println(queue.offer("b"));
         System.out.println(queue.offer("c"));
         System.out.println(queue.offer("d"));
-
         //System.out.println(queue.offer("d"));//放入超出范围的值
+
         System.out.println("-----取出------");
         System.out.println(queue.poll());
         System.out.println(queue.poll());
@@ -57,7 +57,7 @@ public class BlockQueueTest {
         queue.put("a");
         queue.put("b");
         queue.put("c");
-        //queue.put("d");//放入超出范围的值
+        queue.put("d");//放入超出范围的值
         System.out.println("-----取出------");
         System.out.println(queue.take());
         System.out.println(queue.take());

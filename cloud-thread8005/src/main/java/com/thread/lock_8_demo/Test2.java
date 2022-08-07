@@ -11,8 +11,10 @@ import java.util.concurrent.TimeUnit;
 public class Test2 {
     public static void main(String[] args) {
         Cellphone phone = new Cellphone();
+        Cellphone phone1 = new Cellphone();
+
         new Thread(() -> {
-            phone.call();
+            phone1.call();
         }).start();
         new Thread(() -> {
             phone.sms();

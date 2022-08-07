@@ -5,7 +5,7 @@ import java.lang.reflect.*;
 import java.util.Date;
 
 public class ReflectionTest {
-    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException, InstantiationException {
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException, InstantiationException, ClassNotFoundException {
         System.out.println("***********************反射  访问字段*******************************");
         Class<Person> personClass = Person.class;
         Field name = personClass.getDeclaredField("name");
@@ -67,7 +67,30 @@ public class ReflectionTest {
         Animal animal = (Animal)Proxy.newProxyInstance(Animal.class.getClassLoader(), new Class[]{Animal.class}, invocationHandler);
         animal.printName();
 
+
+        System.out.println("****************************反射复习************************************");
+        //获取class性能最好
+        Class<Person> personClass1 = Person.class;
+        //根据对象获取class
+        Class<? extends Person> aClass = person.getClass();
+        //根据权限定名获取class
+        Class<?> aClass1 = Class.forName("reflection.Person");
+        //根据构造方法创建实例
+        Constructor<Person> declaredConstructor = personClass1.getDeclaredConstructor(String.class, int.class);
+        Person person2 = declaredConstructor.newInstance("邱月圆", 25);
+        //调用普通方法
+        Method setName = personClass1.getDeclaredMethod("setName", String.class);
+        setName.invoke(person2,"邓桥");
+        System.out.println(person2.toString());
+        //调用字段
+        Field age1 = personClass1.getDeclaredField("age");
+        age1.setAccessible(true);
+        age1.set(person2,28);
+        System.out.println(person2);
+
     }
+
+
 
 }
 
@@ -107,5 +130,13 @@ class Person implements Animal {
     @Override
     public void printName() {
         System.out.println(this.name);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

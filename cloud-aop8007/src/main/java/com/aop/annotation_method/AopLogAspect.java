@@ -42,7 +42,7 @@ public class AopLogAspect {
         Object proceed = null;
         log.info("【环绕通知-前置执行】,请求：方法={} 参数={},", point.getSignature().getName(), point.getArgs());
         try {
-            proceed = point.proceed();
+            proceed = point.proceed();//执行目标方法
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }

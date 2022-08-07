@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -18,7 +21,7 @@ public class CompletableFutureDemo {
     public static void main(String[] args) {
         CompletableFuture.runAsync(()->{
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.SECONDS.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -137,6 +140,21 @@ class CompletableFutureConstroller {
             System.out.println("【任务3的结果计算完成】开始扣减红牛库存-1");
         });
         return completableFuture2.get().concat("下单成功");
+    }
+
+    /**
+     * 如果执行异常
+     */
+    @GetMapping("/test")
+    public void test() throws ExecutionException, InterruptedException {
+        System.out.println(CompletableFuture.runAsync(() -> {
+            int a = 2 / 0;
+        }).thenApply((code) -> {
+            return "我成功了";
+        }).exceptionally((e) -> {
+            System.out.println(e.getMessage());
+            return "我失败";
+        }).get());
     }
 
 }

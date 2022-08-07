@@ -20,6 +20,7 @@
         <module>cloud-performance-8009</module>
         <module>cloud-netty8010</module>
         <module>cloud-annotaion8011</module>
+        <module>cloud-log4j8012</module>
     </modules>
     <packaging>pom</packaging>
 

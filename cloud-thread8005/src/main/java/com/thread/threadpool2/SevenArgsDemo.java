@@ -39,7 +39,7 @@ public class SevenArgsDemo {
         //new ThreadPoolExecutor.DiscardPolicy() //线程拒绝策略：队列满了，丢掉任务，不抛出异常
         //new ThreadPoolExecutor.DiscardOldestPolicy();//队列满了，丢弃最早的未处理请求，然后重试execute,也不会抛出异常！
         try {
-            for (int i = 1; i <= 8; i++) {
+            for (int i = 1; i <= 9; i++) {
                 threadPool.execute(() -> {
                     System.out.println(Thread.currentThread().getName() + ":ok");
                 });

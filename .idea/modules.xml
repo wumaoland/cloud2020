@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-annotaion8011/cloud-annotaion8011.iml" filepath="$PROJECT_DIR$/cloud-annotaion8011/cloud-annotaion8011.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-aop8007/cloud-aop8007.iml" filepath="$PROJECT_DIR$/cloud-aop8007/cloud-aop8007.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-consumer-order80/cloud-consumer-order80.iml" filepath="$PROJECT_DIR$/cloud-consumer-order80/cloud-consumer-order80.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-log4j8012/cloud-log4j8012.iml" filepath="$PROJECT_DIR$/cloud-log4j8012/cloud-log4j8012.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-mqtt-8008/cloud-mqtt-8008.iml" filepath="$PROJECT_DIR$/cloud-mqtt-8008/cloud-mqtt-8008.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-netty8010/cloud-netty8010.iml" filepath="$PROJECT_DIR$/cloud-netty8010/cloud-netty8010.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-performance-8009/cloud-performance-8009.iml" filepath="$PROJECT_DIR$/cloud-performance-8009/cloud-performance-8009.iml" />
@@ -12,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-redisson8002/cloud-redisson8002.iml" filepath="$PROJECT_DIR$/cloud-redisson8002/cloud-redisson8002.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-rocketmq8003/cloud-rocketmq8003.iml" filepath="$PROJECT_DIR$/cloud-rocketmq8003/cloud-rocketmq8003.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-sentinel8004/cloud-sentinel8004.iml" filepath="$PROJECT_DIR$/cloud-sentinel8004/cloud-sentinel8004.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-socket-8013/cloud-socket-8013.iml" filepath="$PROJECT_DIR$/cloud-socket-8013/cloud-socket-8013.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-thread8005/cloud-thread8005.iml" filepath="$PROJECT_DIR$/cloud-thread8005/cloud-thread8005.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-websocket8006/cloud-websocket8006.iml" filepath="$PROJECT_DIR$/cloud-websocket8006/cloud-websocket8006.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-base/java-base.iml" filepath="$PROJECT_DIR$/java-base/java-base.iml" />
