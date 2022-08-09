@@ -8,7 +8,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-public class ClinetScoket {
+public class StrClientSocket {
     public static void main(String[] args) {
         Socket socket = null;
         OutputStream contentStream = null;

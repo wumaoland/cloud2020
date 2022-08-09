@@ -2,17 +2,16 @@ package com.socket.cloudsocket8013.tcp;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServerScoketTest {
+public class StrServerSocket {
     public static void main(String[] args) {
-        ServerSocket serverSocket = null;
+        java.net.ServerSocket serverSocket = null;
         Socket accept = null;
         InputStream inputStream = null;
         try {
             //新建服务端socket
-            serverSocket = new ServerSocket(9999);
+            serverSocket = new java.net.ServerSocket(9999);
             //接收客户端流
             //while(true)让服务端一直监听
             while (true) {
