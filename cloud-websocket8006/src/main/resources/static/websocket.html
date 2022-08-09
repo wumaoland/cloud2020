@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <meta charset="UTF-8" name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
     <title>Title</title>
+    <style type="text/css">
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container {
+            display: -webkit-flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*视窗高度*/
+            height: 100vh;
+        }
+
+        .item {
+            width: 800px;
+            height: 300px;
+
+        }
+    </style>
 </head>
 <body>
-<audio controls="controls"  id="yinpin" src="http://leewei.space/resource/qq_tishi.mp4" style="disylay:none;" hidden="hidden">
+<audio controls="controls" id="yinpin" src="/resource/qq_tishi.mp3" style="disylay:none;" hidden="hidden">
     your browser dose not support the audio element
 </audio>
 
-<div style="height: 200px;border: 1px solid black;overflow:auto;" id="show"></div>
-<input id="msg" type="text"/>
-<button id="send">发送给</button>
-<select id="reciver">
-</select>
-<button id="close">断开</button>
-<input type="hidden" id="username"/>
+<div class="container">
+    <div class="item">
+        <div style="width:800px ;text-align: center;font-size: 50px;margin-bottom: 10px">匿名聊天室</div>
+        <div style="height: 300px;border: 1px solid black;overflow:auto;" id="show"></div>
+
+        <div>
+            <input id="msg" style="height: 40px;width: 600px;margin: 0px;padding: 0px" type="text"/>
+            <button id="send" style="height: 45px ;width: 60px" οnkeydοwn="if(event.keyCode==13){Click()}">发送给</button>
+            <select id="reciver" style="height: 44px;width: 50px">
+            </select>
+            <button id="close" style="height: 45px ;width: 71px;background-color:rgb(245,108,108) ">断开</button>
+            <input type="hidden" id="username"/>
+        </div>
+    </div>
+</div>
 
 
 <script>
-    var sendMsg=document.getElementById("msg");
-    var username=document.getElementById("username");
-    var send=document.getElementById("send");
-    var reciver=document.getElementById("reciver");
-    var close=document.getElementById("close");
-    var show=document.getElementById("show");
+    var sendMsg = document.getElementById("msg");
+    var username = document.getElementById("username");
+    var send = document.getElementById("send");
+    var reciver = document.getElementById("reciver");
+    var close = document.getElementById("close");
+    var show = document.getElementById("show");
     var yinpin=document.getElementById("yinpin")
     var ws = new WebSocket("ws://localhost:8006/websocket");
     ws.addEventListener("open",function () {
         show.innerHTML="服务已经连接...";
     });
     send.addEventListener("click",function () {
+        Click();
+        clearSend();
+    });
+    function clearSend(){
+        sendMsg.value="";
+    }
+
+    function Click() {
         var content=sendMsg.value;
         console.log(content);
         var index=reciver.selectedIndex ;
@@ -39,7 +76,7 @@
         var beforContent=show.innerHTML;
         show.innerHTML=beforContent+"你对"+reciver.options[index].value+"说:"+content+"</br>";
         ws.send(sendContent);
-    });
+    }
     ws.addEventListener("message",function (e) {
         var data=JSON.parse(e.data);
         show.scrollTop=show.scrollHeight

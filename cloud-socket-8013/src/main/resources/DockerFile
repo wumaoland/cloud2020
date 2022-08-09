@@ -1,5 +1,0 @@
-from java8
-copy *.jar/app.jar
-cmd ["--server.port=9999"]
-expose 9999
-entrypoint ["java","-jar","/app.jar"]

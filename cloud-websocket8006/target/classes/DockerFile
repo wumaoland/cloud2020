@@ -1,0 +1,5 @@
+from java:8
+copy *.jar /websocket.jar
+cmd ["--server.port=8006"]
+expose 8006
+entrypoint ["java","-jar","websocket.jar"]
