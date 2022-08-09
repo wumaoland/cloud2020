@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leewei的主页</title>
+    <style type="text/css">
+        /*这里需要用视窗高度，原来body默认有8px，给它初始化为0*/
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+        .flex-container{
+            display: -webkit-flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*视窗高度*/
+            height: 100vh;
+        }
+        .flex-item{
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 200px;
+            /*font-family: cursive;*/
+
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">Hello,Leewei</div>
+<!--        <div class="flex-item">李威</div>-->
+    </div>
+
+</body>
+</html>
