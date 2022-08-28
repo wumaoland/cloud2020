@@ -7,10 +7,7 @@ import com.easyexcel.pojo.PersonExcel;
 import com.easyexcel.service.PersonService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/person")
 public class PersonController {
     @Autowired
     PersonService personService;
@@ -32,7 +30,7 @@ public class PersonController {
     @PostMapping("upload")
     @ResponseBody
     public String upload(MultipartFile file) throws IOException {
-        EasyExcel.read(file.getInputStream(), Person.class, new UploadDataListener(personService)).sheet().doRead();
+        EasyExcel.read(file.getInputStream(), Person.class, new UploadDataListener(personService)).sheet(0).doRead();
         return "success";
     }
 

@@ -8,7 +8,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 #整合mybatis
 mybatis:
+  #指定POJO扫描包来让mybatis自动扫描到自定义的POJO，这样就不用在xml写全限定名
   type-aliases-package: com.easyexcel.pojo
+  #执行mapper.xml文件的位置， “classpath:” 代表resource
   mapper-locations: classpath:mybatis/mapper/*.xml
   #驼峰下划线转换设置
   configuration:
