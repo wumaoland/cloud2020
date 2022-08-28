@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.easyexcel.mapper.JobMapper">
-    <insert id="batchSave" parameterType="Job">
+    <insert id="batchSave" parameterType="com.easyexcel.pojo.Job">
         insert into Job(job,salary,entry_date)
         values
         <foreach item="item" index="index" collection="list" separator=",">
