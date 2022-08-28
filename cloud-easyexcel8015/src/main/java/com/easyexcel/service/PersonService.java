@@ -16,7 +16,7 @@ public class PersonService {
         return personMapper.queryPersonList();
     }
 
-    public void save(Person person) {
-        personMapper.save(person);
+    public void batchSave(List<Person> persons) {
+        personMapper.batchSave(persons);
     }
 }

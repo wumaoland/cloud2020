@@ -20,7 +20,7 @@ public class UploadDataListener implements ReadListener<Person> {
     /**
      * 每隔5条存储数据库，实际使用中可以100条，然后清理list ，方便内存回收
      */
-    private static final int BATCH_COUNT = 5;
+    private static final int BATCH_COUNT = 2;
     private List<Person> cachedDataList = ListUtils.newArrayListWithExpectedSize(BATCH_COUNT);
     /**
      * 假设这个是一个DAO，当然有业务逻辑这个也可以是一个service。当然如果不用存储这个对象没用。
@@ -73,7 +73,7 @@ public class UploadDataListener implements ReadListener<Person> {
      */
     private void saveData() {
         log.info("{}条数据，开始存储数据库！", cachedDataList.size());
-        personService.save(cachedDataList.get(0));
+        personService.batchSave(cachedDataList);
         log.info("存储数据库成功！");
     }
 

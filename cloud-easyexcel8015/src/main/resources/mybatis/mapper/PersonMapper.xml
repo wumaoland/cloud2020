@@ -6,7 +6,12 @@
     <select id="queryPersonList" resultType="Person">
         select name,sex,age,save_money  from person
     </select>
-    <insert id="save" parameterType="Person">
-        insert into person(name,sex,age,save_money) values(#{name},#{sex},#{age},#{saveMoney})
+    <insert id="batchSave" parameterType="Person">
+        insert into person(name,sex,age,save_money)
+        values
+        <foreach item="item" index="index" collection="list" separator=",">
+            (#{item.name},#{item.sex},#{item.age},#{item.saveMoney})
+        </foreach>
+
     </insert>
 </mapper>

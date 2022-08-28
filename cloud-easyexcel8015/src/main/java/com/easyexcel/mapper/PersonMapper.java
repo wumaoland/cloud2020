@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface PersonMapper {
     List<Person> queryPersonList();
-    void save(Person person);
+    void batchSave(List<Person> persons);
 }
