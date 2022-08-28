@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-socket-8013/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-paper-analysis8014/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-easyexcel8015/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

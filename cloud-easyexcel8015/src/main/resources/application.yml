@@ -1,0 +1,16 @@
+server:
+  port: 8015
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/easyexcel?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#整合mybatis
+mybatis:
+  type-aliases-package: com.easyexcel.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #驼峰下划线转换设置
+  configuration:
+    map-underscore-to-camel-case: true
+

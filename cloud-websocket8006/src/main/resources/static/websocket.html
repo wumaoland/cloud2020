@@ -55,7 +55,7 @@
     var close = document.getElementById("close");
     var show = document.getElementById("show");
     var yinpin=document.getElementById("yinpin")
-    var ws = new WebSocket("ws://localhost:8006/websocket");
+    var ws = new WebSocket("ws://1.116.37.240:8006/websocket");
     ws.addEventListener("open",function () {
         show.innerHTML="服务已经连接...";
     });

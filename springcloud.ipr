@@ -108,6 +108,10 @@ under the License.
       <module filepath="$PROJECT_DIR$/cloud-websocket8006/cloud-websocket8006.iml"/>
       <module filepath="$PROJECT_DIR$/cloud-aop8007/cloud-aop8007.iml"/>
       <module filepath="$PROJECT_DIR$/cloud-mqtt-8008/cloud-mqtt-8008.iml"/>
+      <module filepath="$PROJECT_DIR$/cloud-performance-8009/cloud-performance-8009.iml"/>
+      <module filepath="$PROJECT_DIR$/cloud-netty8010/cloud-netty8010.iml"/>
+      <module filepath="$PROJECT_DIR$/cloud-annotaion8011/cloud-annotaion8011.iml"/>
+      <module filepath="$PROJECT_DIR$/cloud-log4j8012/cloud-log4j8012.iml"/>
     </modules> 
   </component>  
   <UsedPathMacros> 
