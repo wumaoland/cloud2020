@@ -3,6 +3,9 @@ package jvm;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * jvm调优
+ */
 public class JvmTest {
     byte[] bytes = new byte[1 * 1024 * 1024];
     public static void main(String[] args) {
