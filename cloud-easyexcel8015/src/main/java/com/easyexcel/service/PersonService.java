@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PersonService {
+public class PersonService implements ExcelBaseService<Person>{
     @Autowired
     PersonMapper personMapper;
 
@@ -16,7 +16,8 @@ public class PersonService {
         return personMapper.queryPersonList();
     }
 
-    public void batchSave(List<Person> persons) {
+
+    public void excelDataBatchSave(List<Person> persons) {
         personMapper.batchSave(persons);
     }
 }

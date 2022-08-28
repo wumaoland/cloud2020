@@ -1,32 +1,25 @@
 package com.easyexcel.common;
 
-import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.read.listener.ReadListener;
 import com.alibaba.excel.util.ListUtils;
 import com.alibaba.fastjson.JSON;
-import com.easyexcel.pojo.Person;
-import com.easyexcel.service.PersonService;
+import com.easyexcel.service.ExcelBaseService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.net.URLEncoder;
-import java.util.Date;
+
 import java.util.List;
 @Slf4j
-public class UploadDataListener implements ReadListener<Person> {
+public class UploadDataListener<T> implements ReadListener<T> {
     /**
      * 每隔5条存储数据库，实际使用中可以100条，然后清理list ，方便内存回收
      */
-    private static final int BATCH_COUNT = 2;
-    private List<Person> cachedDataList = ListUtils.newArrayListWithExpectedSize(BATCH_COUNT);
+    private static final int BATCH_COUNT = 100;
+    private List<T> cachedDataList = ListUtils.newArrayListWithExpectedSize(BATCH_COUNT);
     /**
      * 假设这个是一个DAO，当然有业务逻辑这个也可以是一个service。当然如果不用存储这个对象没用。
      */
-    private PersonService personService;
-
+    private ExcelBaseService excelBaseService;
 
 
     /**
@@ -34,8 +27,8 @@ public class UploadDataListener implements ReadListener<Person> {
      *
      * @param
      */
-    public UploadDataListener(PersonService personService) {
-        this.personService = personService;
+    public UploadDataListener(ExcelBaseService excelBaseService) {
+        this.excelBaseService = excelBaseService;
     }
 
     /**
@@ -45,7 +38,7 @@ public class UploadDataListener implements ReadListener<Person> {
      * @param context
      */
     @Override
-    public void invoke(Person data, AnalysisContext context) {
+    public void invoke(T data, AnalysisContext context) {
         log.info("解析到一条数据:{}", JSON.toJSONString(data));
         cachedDataList.add(data);
         // 达到BATCH_COUNT了，需要去存储一次数据库，防止数据几万条数据在内存，容易OOM
@@ -73,7 +66,7 @@ public class UploadDataListener implements ReadListener<Person> {
      */
     private void saveData() {
         log.info("{}条数据，开始存储数据库！", cachedDataList.size());
-        personService.batchSave(cachedDataList);
+        excelBaseService.excelDataBatchSave(cachedDataList);
         log.info("存储数据库成功！");
     }
 
