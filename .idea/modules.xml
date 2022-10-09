@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-annotaion8011/cloud-annotaion8011.iml" filepath="$PROJECT_DIR$/cloud-annotaion8011/cloud-annotaion8011.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-aop8007/cloud-aop8007.iml" filepath="$PROJECT_DIR$/cloud-aop8007/cloud-aop8007.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-consumer-order80/cloud-consumer-order80.iml" filepath="$PROJECT_DIR$/cloud-consumer-order80/cloud-consumer-order80.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-easyexcel8015/cloud-easyexcel.iml" filepath="$PROJECT_DIR$/cloud-easyexcel8015/cloud-easyexcel.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-easyexcel8015/cloud-easyexcel8015.iml" filepath="$PROJECT_DIR$/cloud-easyexcel8015/cloud-easyexcel8015.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-log4j8012/cloud-log4j8012.iml" filepath="$PROJECT_DIR$/cloud-log4j8012/cloud-log4j8012.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-mqtt-8008/cloud-mqtt-8008.iml" filepath="$PROJECT_DIR$/cloud-mqtt-8008/cloud-mqtt-8008.iml" />
