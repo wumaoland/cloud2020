@@ -8,19 +8,19 @@
     <artifactId>springcloud</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>cloud-provider-payment8001</module>
-        <module>cloud-consumer-order80</module>
-        <module>cloud-redisson8002</module>
-        <module>cloud-rocketmq8003</module>
-        <module>cloud-sentinel8004</module>
-        <module>cloud-thread8005</module>
-        <module>cloud-websocket8006</module>
-        <module>cloud-aop8007</module>
+        <module>cloud-provider-payment-8001</module>
+        <module>cloud-consumer-order-80</module>
+        <module>cloud-redisson-8002</module>
+        <module>cloud-rocketmq-8003</module>
+        <module>cloud-sentinel-8004</module>
+        <module>cloud-thread-8005</module>
+        <module>cloud-websocket-8006</module>
+        <module>cloud-aop-8007</module>
         <module>cloud-mqtt-8008</module>
         <module>cloud-performance-8009</module>
-        <module>cloud-netty8010</module>
-        <module>cloud-annotaion8011</module>
-        <module>cloud-log4j8012</module>
+        <module>cloud-netty-8010</module>
+        <module>cloud-annotaion-8011</module>
+        <module>cloud-log4j-8012</module>
     </modules>
     <packaging>pom</packaging>
 

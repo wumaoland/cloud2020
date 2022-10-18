@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCurrentParamGroup">
+    <option name="className" value="com.filter.controller.UserController" />
+    <option name="method" value="getUserInfo" />
+    <option name="module" value="cloud-filter-8016" />
+    <option name="originUrl" value="/user/getUserInfo/{name}" />
+    <option name="pathParamMap">
+      <map>
+        <entry key="name">
+          <value>
+            <Object />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="url" value="/user/getUserInfo/name_kr9h6" />
+  </component>
+</project>
