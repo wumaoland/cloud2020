@@ -12,6 +12,9 @@
         <option value="$PROJECT_DIR$/cloud-annotaion-8011/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-consumer-order-80/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-aop-8007/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-sse-8017/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-paper-analysis-8014/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-udp-8018/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
