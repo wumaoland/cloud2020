@@ -19,7 +19,7 @@ WebSocket是一种基于HTTP的长链接技术。传统的HTTP协议是一种请
 现代浏览器都已经支持WebSocket协议，服务器则需要底层框架支持。Java的Servlet规范从3.1开始支持WebSocket，所以，必须选择支持Servlet 3.1或更高规范的Servlet容器，才能支持WebSocket。最新版本的Tomcat、Jetty等开源服务器均支持WebSocket。
 ### 二、WebSocket+SpringBoot的使用
 * springboot整合websocket，先引入websocket相关的工具包，和SSE相比额外的开发成本。
-```
+```ecmascript 6
 <!-- 引入websocket -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -74,7 +74,7 @@ public class WebSocketServer {
 }
 ```
 * 前端初始化打开WebSocket连接，并监听连接状态，接收服务端数据或向服务端发送数据。
-```javascript
+```html
 <script>
     var ws = new WebSocket('ws://localhost:7777/webSocket/10086');
     // 获取连接状态
