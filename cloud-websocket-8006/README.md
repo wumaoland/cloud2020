@@ -27,7 +27,7 @@ WebSocket是一种基于HTTP的长链接技术。传统的HTTP协议是一种请
 </dependency>
 ```
 * 服务端使用@ServerEndpoint注解标注当前类为一个websocket服务器，客户端可以通过ws://localhost:7777/webSocket/10086来连接到WebSocket服务器端。
-```
+```java
 @Component
 @Slf4j
 @ServerEndpoint("/websocket/{userId}")
@@ -74,7 +74,7 @@ public class WebSocketServer {
 }
 ```
 * 前端初始化打开WebSocket连接，并监听连接状态，接收服务端数据或向服务端发送数据。
-```
+```javascript
 <script>
     var ws = new WebSocket('ws://localhost:7777/webSocket/10086');
     // 获取连接状态
