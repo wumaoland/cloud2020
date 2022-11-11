@@ -1,0 +1,6 @@
+server:
+  port: 8019
+cache:
+  type: CAFFEINE
+  caffeine:
+    spec: maximumSize=500,expireAfterAccess=600s

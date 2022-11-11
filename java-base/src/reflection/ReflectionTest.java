@@ -2,16 +2,26 @@ package reflection;
 
 import javax.xml.crypto.Data;
 import java.lang.reflect.*;
+import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class ReflectionTest {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException, InstantiationException, ClassNotFoundException {
+        /******************************************V我50*****************************/
+        dependTest2();
+
         System.out.println("***********************反射  访问字段*******************************");
         Class<Person> personClass = Person.class;
         Field name = personClass.getDeclaredField("name");
         Field age = personClass.getDeclaredField("age");
         System.out.println(name.getName());
         System.out.println(age.getName());
+        Field[] declaredFields = personClass.getDeclaredFields();
+        for (Field declaredField : declaredFields) {
+            System.out.println("当前字段名：" + declaredField.getName());
+        }
 
         System.out.println("***********************反射 调用方法*******************************");
         //例如Math.abs方法
@@ -41,7 +51,7 @@ public class ReflectionTest {
         Person person1 = Person.class.newInstance();
 
         //反射 获取有参构造方法
-        Constructor<Person> constructor = Person.class.getConstructor(String.class,int.class);
+        Constructor<Person> constructor = Person.class.getConstructor(String.class, int.class);
         //调用构造方法
         Person lw = constructor.newInstance("lw", 24);
         System.out.println(lw.getName());
@@ -58,13 +68,13 @@ public class ReflectionTest {
         InvocationHandler invocationHandler = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                if (method.getName().equals("printName") ){
+                if (method.getName().equals("printName")) {
                     System.out.println("被调用了");
                 }
                 return null;
             }
         };
-        Animal animal = (Animal)Proxy.newProxyInstance(Animal.class.getClassLoader(), new Class[]{Animal.class}, invocationHandler);
+        Animal animal = (Animal) Proxy.newProxyInstance(Animal.class.getClassLoader(), new Class[]{Animal.class}, invocationHandler);
         animal.printName();
 
 
@@ -80,17 +90,47 @@ public class ReflectionTest {
         Person person2 = declaredConstructor.newInstance("邱月圆", 25);
         //调用普通方法
         Method setName = personClass1.getDeclaredMethod("setName", String.class);
-        setName.invoke(person2,"邓桥");
+        setName.invoke(person2, "邓桥");
         System.out.println(person2.toString());
         //调用字段
         Field age1 = personClass1.getDeclaredField("age");
         age1.setAccessible(true);
-        age1.set(person2,28);
+        age1.set(person2, 28);
         System.out.println(person2);
 
     }
 
+    public static void dependTest2() {
+        List<List<Integer>> lists = Arrays.asList(
+                Arrays.asList(0, 22, 34, 42, 47, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99),
+                Arrays.asList(1, 21, 31, 34, 42, 48, 60, 61, 82, 83, 98, 99),
+                Arrays.asList(2, 20, 28, 34, 42, 49, 60, 61, 82, 83, 98, 99),
+                Arrays.asList(3, 19, 34, 42, 60, 61, 82, 83, 98, 99),
+                Arrays.asList(4, 18, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 82, 83, 98, 99), Arrays.asList(5, 17, 34, 42, 73, 74, 82, 83, 98, 99),
+                Arrays.asList(6, 16, 34, 36, 43, 48, 73, 74, 82, 83, 98, 99),
+                Arrays.asList(7, 15, 33, 34, 43, 47, 73, 74, 82, 83, 98, 99),
+                Arrays.asList(8, 14, 31, 34, 44, 45, 50, 73, 74, 82, 83, 98, 99),
+                Arrays.asList(9, 13, 30, 34, 43, 44, 50, 73, 74, 82, 83, 98, 99),
+                Arrays.asList(10, 12, 31, 34, 41, 45, 48, 73, 74, 82, 83, 98, 99),
+                Arrays.asList(11, 34, 46, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99)
+        );
+        System.out.println(demo(lists));
+    }
 
+    static String demo (List<List<Integer>> arr) {
+        String str = "";
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < 100; j++) {
+                if (arr.get(i).indexOf(j) > -1) {
+                    str += "█";
+                } else {
+                    str += " ";
+                }
+            }
+            str += "\n";
+        }
+        return str;
+    }
 
 }
 
@@ -139,4 +179,6 @@ class Person implements Animal {
                 ", age=" + age +
                 '}';
     }
+
+
 }
