@@ -97,8 +97,8 @@
             </dependency>
             <!--log4j-->
             <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
+                <groupId>log4j2</groupId>
+                <artifactId>log4j2</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
             <dependency>
