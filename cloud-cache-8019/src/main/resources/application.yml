@@ -4,3 +4,6 @@ cache:
   type: CAFFEINE
   caffeine:
     spec: maximumSize=500,expireAfterAccess=600s
+spring:
+  girlfriend:
+    message: I LOVE YOU
