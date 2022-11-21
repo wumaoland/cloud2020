@@ -6,4 +6,4 @@ cache:
     spec: maximumSize=500,expireAfterAccess=600s
 spring:
   girlfriend:
-    message: I LOVE YOU
+    message: I LOVE 1111
