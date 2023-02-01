@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/cloud-consumer-order-80/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-consumer-order-80/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-easyexcel8015/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-easyexcel8015/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-filter-8016/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-filter-8016/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-log4j-8012/src/main/java" charset="UTF-8" />
@@ -30,12 +31,16 @@
     <file url="file://$PROJECT_DIR$/cloud-sentinel-8004/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-socket-8013/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-sse-8017/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-sse-8017/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-thread-8005/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-thread-8005/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-udp-8018/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-udp-8018/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-websocket-8006/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-websocket-8006/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java-base/src/base/Hero.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

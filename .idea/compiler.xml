@@ -41,37 +41,37 @@
       <module name="cloud-annotaion-8011" target="1.8" />
       <module name="cloud-annotaion8011" target="8" />
       <module name="cloud-aop-8007" target="1.8" />
-      <module name="cloud-aop8007" target="1.5" />
+      <module name="cloud-aop8007" target="12" />
       <module name="cloud-consumer-order-80" target="1.8" />
-      <module name="cloud-consumer-order80" target="1.5" />
-      <module name="cloud-easyexcel" target="1.6" />
+      <module name="cloud-consumer-order80" target="12" />
+      <module name="cloud-easyexcel" target="1.8" />
       <module name="cloud-easyexcel8015" target="1.8" />
-      <module name="cloud-filter-8016" target="1.5" />
+      <module name="cloud-filter-8016" target="1.8" />
       <module name="cloud-log4j-8012" target="1.8" />
       <module name="cloud-log4j8012" target="8" />
-      <module name="cloud-mqtt-8008" target="1.8" />
+      <module name="cloud-mqtt-8008" target="12" />
       <module name="cloud-netty-8010" target="1.8" />
       <module name="cloud-netty8010" target="8" />
       <module name="cloud-oop-static" target="1.8" />
       <module name="cloud-paper-analysis-8014" target="1.8" />
       <module name="cloud-paper-analysis8014" target="1.8" />
-      <module name="cloud-performance-8009" target="1.8" />
+      <module name="cloud-performance-8009" target="12" />
       <module name="cloud-provider-payment-8001" target="1.8" />
-      <module name="cloud-provider-payment8001" target="1.5" />
+      <module name="cloud-provider-payment8001" target="12" />
       <module name="cloud-redisson-8002" target="1.8" />
-      <module name="cloud-redisson8002" target="1.5" />
+      <module name="cloud-redisson8002" target="12" />
       <module name="cloud-rocketmq-8003" target="1.8" />
-      <module name="cloud-rocketmq8003" target="1.5" />
+      <module name="cloud-rocketmq8003" target="12" />
       <module name="cloud-sentinel-8004" target="1.8" />
-      <module name="cloud-sentinel8004" target="1.5" />
-      <module name="cloud-socket-8013" target="1.6" />
+      <module name="cloud-sentinel8004" target="12" />
+      <module name="cloud-socket-8013" target="1.8" />
       <module name="cloud-sse-8017" target="1.8" />
       <module name="cloud-thread-8005" target="1.8" />
-      <module name="cloud-thread8005" target="1.5" />
+      <module name="cloud-thread8005" target="12" />
       <module name="cloud-udp-8018" target="1.8" />
       <module name="cloud-websocket-8006" target="1.8" />
-      <module name="cloud-websocket8006" target="1.5" />
-      <module name="springcloud" target="1.8" />
+      <module name="cloud-websocket8006" target="12" />
+      <module name="springcloud" target="12" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
