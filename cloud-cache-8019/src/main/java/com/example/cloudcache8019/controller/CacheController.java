@@ -4,11 +4,13 @@ import com.example.cloudcache8019.service.CacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class CacheController {
     @Autowired
     private  CacheService cacheService;
@@ -19,8 +21,9 @@ public class CacheController {
         return cacheService.save(username,count);
     }
     @GetMapping("/get/{username}")
-    public int getUsername(@PathVariable("username") String username) {
-       return cacheService.getUsername(username);
+    public String getUsername(@PathVariable("username") String username) {
+//       return cacheService.getUsername(username);
+        return "哦哟";
     }
 
     @GetMapping("/remove/{username}")

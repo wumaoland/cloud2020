@@ -19,7 +19,7 @@ package com.thread.static_proxy;
 class You implements Marry {
         @Override
         public void happyMarry() {
-            System.out.println("lw要结婚了");
+            System.out.println("要结婚了");
         }
     }
 
@@ -58,8 +58,8 @@ public class StaticProxy {
         new WeddingConmpany(new You()).happyMarry();
 
         //Thread的创建 和结婚这个例子 对比，可以看出继承Thread创建线程的方式也是一种静态代理
-        new Thread(() -> {
-            System.out.println("lw要结婚了");
-        }).start();
+//        new Thread(() -> {
+//            System.out.println("要结婚了");
+//        }).start();
     }
 }
