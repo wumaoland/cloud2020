@@ -1,8 +1,5 @@
 package com.socket.cloudsocket8013.tcp;
 
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
