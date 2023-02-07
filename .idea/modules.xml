@@ -8,28 +8,20 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-easyexcel8015/cloud-easyexcel.iml" filepath="$PROJECT_DIR$/cloud-easyexcel8015/cloud-easyexcel.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-filter-8016/cloud-filter-8016.iml" filepath="$PROJECT_DIR$/cloud-filter-8016/cloud-filter-8016.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-log4j8012/cloud-log4j-8012.iml" filepath="$PROJECT_DIR$/cloud-log4j8012/cloud-log4j-8012.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-log4j-8012/cloud-log4j8012.iml" filepath="$PROJECT_DIR$/cloud-log4j-8012/cloud-log4j8012.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-mqtt-8008/cloud-mqtt-8008.iml" filepath="$PROJECT_DIR$/cloud-mqtt-8008/cloud-mqtt-8008.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-netty8010/cloud-netty-8010.iml" filepath="$PROJECT_DIR$/cloud-netty8010/cloud-netty-8010.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-netty-8010/cloud-netty8010.iml" filepath="$PROJECT_DIR$/cloud-netty-8010/cloud-netty8010.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-paper-analysis8014/cloud-paper-analysis-8014.iml" filepath="$PROJECT_DIR$/cloud-paper-analysis8014/cloud-paper-analysis-8014.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-paper-analysis-8014/cloud-paper-analysis8014.iml" filepath="$PROJECT_DIR$/cloud-paper-analysis-8014/cloud-paper-analysis8014.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-performance-8009/cloud-performance-8009.iml" filepath="$PROJECT_DIR$/cloud-performance-8009/cloud-performance-8009.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-provider-payment8001/cloud-provider-payment-8001.iml" filepath="$PROJECT_DIR$/cloud-provider-payment8001/cloud-provider-payment-8001.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-provider-payment-8001/cloud-provider-payment8001.iml" filepath="$PROJECT_DIR$/cloud-provider-payment-8001/cloud-provider-payment8001.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-redisson8002/cloud-redisson-8002.iml" filepath="$PROJECT_DIR$/cloud-redisson8002/cloud-redisson-8002.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-redisson-8002/cloud-redisson8002.iml" filepath="$PROJECT_DIR$/cloud-redisson-8002/cloud-redisson8002.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-rocketmq8003/cloud-rocketmq-8003.iml" filepath="$PROJECT_DIR$/cloud-rocketmq8003/cloud-rocketmq-8003.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-rocketmq-8003/cloud-rocketmq8003.iml" filepath="$PROJECT_DIR$/cloud-rocketmq-8003/cloud-rocketmq8003.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-sentinel8004/cloud-sentinel-8004.iml" filepath="$PROJECT_DIR$/cloud-sentinel8004/cloud-sentinel-8004.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-sentinel-8004/cloud-sentinel8004.iml" filepath="$PROJECT_DIR$/cloud-sentinel-8004/cloud-sentinel8004.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-socket-8013/cloud-socket-8013.iml" filepath="$PROJECT_DIR$/cloud-socket-8013/cloud-socket-8013.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-sse-8017/cloud-sse-8017.iml" filepath="$PROJECT_DIR$/cloud-sse-8017/cloud-sse-8017.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-thread8005/cloud-thread-8005.iml" filepath="$PROJECT_DIR$/cloud-thread8005/cloud-thread-8005.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-thread-8005/cloud-thread8005.iml" filepath="$PROJECT_DIR$/cloud-thread-8005/cloud-thread8005.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-udp-8018/cloud-udp-8018.iml" filepath="$PROJECT_DIR$/cloud-udp-8018/cloud-udp-8018.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-websocket8006/cloud-websocket-8006.iml" filepath="$PROJECT_DIR$/cloud-websocket8006/cloud-websocket-8006.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-websocket-8006/cloud-websocket8006.iml" filepath="$PROJECT_DIR$/cloud-websocket-8006/cloud-websocket8006.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-base/java-base.iml" filepath="$PROJECT_DIR$/java-base/java-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />
     </modules>
